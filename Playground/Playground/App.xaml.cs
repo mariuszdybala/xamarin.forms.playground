@@ -1,14 +1,19 @@
-﻿using Xamarin.Forms;
+﻿using Playground.ViewModel;
+using Playground.Views;
+using Xamarin.Forms;
 
 namespace Playground
 {
     public partial class App : Application
     {
+        private static readonly ViewModelLocator _locator = new ViewModelLocator();
+
+        public static ViewModelLocator Locator { get { return _locator; } }
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new PlaygroundPage();
+            MainPage = new Main();
         }
 
         protected override void OnStart()
